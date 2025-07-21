@@ -6,13 +6,13 @@
     <title>Chariot Lending - Fast and Reliable Loan Solutions</title>
     <meta name="description" content="Get your loan approved quickly with Chariot Lending. Apply now in just 2 minutes and receive funds fast.">
     <link rel="icon" href="https://i.imgur.com/ORdZkKg.png">
-    <!-- Google Analytics Tag (replace GA_MEASUREMENT_ID with your actual ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1GC631KXQZ"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1GC631KXQZ');
     </script>
     <style>
         /* SF Pro Display (Apple-like font) */
@@ -184,21 +184,47 @@
         }
         
         .faq-item {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
         }
         
         .faq-question {
             font-weight: bold;
             font-size: 20px;
             color: var(--dark-blue);
-            margin-bottom: 10px;
+            padding: 20px;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+        }
+        
+        .faq-question.active::after {
+            content: '-';
         }
         
         .faq-answer {
-            padding-left: 20px;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-answer.show {
+            padding: 20px;
+            max-height: 500px;
         }
         
         .about-content {
@@ -331,6 +357,12 @@
             color: var(--dark-blue);
         }
         
+        .blog-post-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
         footer {
             background-color: var(--dark-blue);
             color: var(--white);
@@ -415,7 +447,7 @@
                 <div class="container">
                     <h1>Fast and Reliable Loan Solutions</h1>
                     <p>Get the financial support you need in just 2 minutes. Our simple application process connects you with the best loan options tailored to your needs.</p>
-                    <a href="https://your-other-website.com/apply" class="cta-button">Apply in 2 minutes</a>
+                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fform.jotform.com%2Fn2funding%2Floan-application-form-%3Ffbclid%3DPAZXh0bgNhZW0CMTEAAacUMUOKbG4m7kmH6v4bxo2mZAQdgcSQ3X536fDERGM0DY2EGpSHhq3nzK2y_g_aem_5uIZPvfLsFiDeWvJmQUdiA&e=AT1iOIONhD2DCeK7n5EnZBHMrhBdY3gQe4XePNPPeUev5VQSPUFzePNyzuw9zzsACyeoVWWKByFSebh8saOK1E1Ayr12V1rhQfsqp8-tM09dAingiXR3Hg0" class="cta-button">Apply in 2 minutes</a>
                 </div>
             </section>
 
@@ -446,20 +478,28 @@
                 <div class="container">
                     <h2>Frequently Asked Questions</h2>
                     <div class="faq-item">
-                        <div class="faq-question">Q: How long will it take to get my loan?</div>
-                        <div class="faq-answer">A: That depends on your credentials as well as other various factors!</div>
+                        <div class="faq-question" onclick="toggleFAQ(this)">Q: How long will it take to get my loan?</div>
+                        <div class="faq-answer">
+                            <p>A: That depends on your credentials as well as other various factors!</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">Q: Where are the loans coming from?</div>
-                        <div class="faq-answer">A: The loans are coming from our reputable partner and company N2Funding</div>
+                        <div class="faq-question" onclick="toggleFAQ(this)">Q: Where are the loans coming from?</div>
+                        <div class="faq-answer">
+                            <p>A: The loans are coming from our reputable partner and company N2Funding</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">Q: What should I do if I have any questions about the process?</div>
-                        <div class="faq-answer">A: Go to the <a href="#" onclick="showPage('about-me')" style="color: var(--dark-blue); font-weight: bold;">About Me</a> page and you can find the details to contact Paul. Send him a call/text or email, and he will get back to you!</div>
+                        <div class="faq-question" onclick="toggleFAQ(this)">Q: What should I do if I have any questions about the process?</div>
+                        <div class="faq-answer">
+                            <p>A: Go to the <a href="#" onclick="showPage('about-me')" style="color: var(--dark-blue); font-weight: bold;">About Me</a> page and you can find the details to contact Paul. Send him a call/text or email, and he will get back to you!</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <div class="faq-question">Q: What is Chariot Lending?</div>
-                        <div class="faq-answer">A: Chariot Lending is a trusted loan lead generator that partners with other companies to help those in need to find the funds they need!</div>
+                        <div class="faq-question" onclick="toggleFAQ(this)">Q: What is Chariot Lending?</div>
+                        <div class="faq-answer">
+                            <p>A: Chariot Lending is a trusted loan lead generator that partners with other companies to help those in need to find the funds they need!</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -471,21 +511,20 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="about-image">
-                        <!-- Replace with your actual image -->
-                        <img src="https://via.placeholder.com/400x500" alt="Paul - Founder of Chariot Lending">
+                        <img src="https://i.imgur.com/2HJysUy.jpeg" alt="Paul Safranek - Founder of Chariot Lending">
                     </div>
                     <div class="about-text">
-                        <p>Welcome to Chariot Lending. I'm Paul, founder and principal loan consultant. With over [X] years of experience in the financial services industry, I've dedicated my career to helping people navigate the often complex world of lending.</p>
+                        <p>I'm Paul Safranek, a 24-year-old entrepreneur with a passion for helping others achieve their financial goals. I founded Chariot Lending to bridge the gap between borrowers and reputable funding sources.</p>
                         
-                        <p>My journey began when I noticed how difficult it was for hardworking individuals to access fair and transparent loan options. Traditional banks often have rigid requirements, while many online lenders lack personalized service. I created Chariot Lending to bridge this gap - combining the efficiency of modern technology with the human touch of expert guidance.</p>
+                        <p>With partnerships at N2Funding and Berkadia Associates, I've created a streamlined process to connect people with the capital they need. My background includes building a successful landscaping business from the ground up and earning degrees in Philosophy and Economics from Eastern Michigan University.</p>
                         
-                        <p>At Chariot Lending, we believe everyone deserves access to financial solutions that fit their unique circumstances. Whether you're consolidating debt, covering unexpected expenses, or investing in your future, we're here to guide you toward the best possible outcome.</p>
+                        <p>Chariot Lending represents my commitment to transparent, accessible financing. I launched the company with my own capital and serve as both owner and CEO. My approach combines business acumen with a genuine desire to help clients navigate the lending landscape.</p>
                         
                         <div class="contact-info">
                             <h3>Contact Me</h3>
-                            <a href="tel:+15551234567">📞 Phone: (555) 123-4567</a>
-                            <a href="mailto:paul@chariotlending.com">✉️ Email: paul@chariotlending.com</a>
-                            <a href="https://instagram.com/yourinstagram" target="_blank">📷 Instagram: @yourinstagram</a>
+                            <a href="tel:734-845-8836">📞 Phone: (734) 845-8836</a>
+                            <a href="mailto:paulsafranek97@gmail.com">✉️ Email: paulsafranek97@gmail.com</a>
+                            <a href="https://www.instagram.com/paulsafranek97/" target="_blank">📷 Instagram: @paulsafranek97</a>
                         </div>
 
                         <div class="contact-form">
@@ -507,11 +546,11 @@
                                     <label for="loanAmount">Desired Loan Amount</label>
                                     <select id="loanAmount" name="loanAmount" required>
                                         <option value="">Select an amount</option>
-                                        <option value="1,000-5,000">$1,000 - $5,000</option>
-                                        <option value="5,001-10,000">$5,001 - $10,000</option>
-                                        <option value="10,001-25,000">$10,001 - $25,000</option>
-                                        <option value="25,001-50,000">$25,001 - $50,000</option>
-                                        <option value="50,001+">$50,001+</option>
+                                        <option value="10,000-50,000">$10,000 - $50,000</option>
+                                        <option value="50,001-100,000">$50,001 - $100,000</option>
+                                        <option value="100,001-200,000">$100,001 - $200,000</option>
+                                        <option value="200,001-300,000">$200,001 - $300,000</option>
+                                        <option value="300,001-400,000">$300,001 - $400,000</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="form-submit">Submit</button>
@@ -528,24 +567,30 @@
                 <h2>Latest Articles</h2>
                 <div class="blog-posts">
                     <div class="blog-post">
-                        <img src="https://via.placeholder.com/400x200" alt="Blog post image">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Unsecured loans">
                         <div class="blog-post-content">
-                            <h3>5 Tips for Improving Your Credit Score</h3>
-                            <p>Learn practical strategies to boost your credit score and qualify for better loan terms.</p>
+                            <h3>Understanding Unsecured Business Loans</h3>
+                            <div class="blog-post-date">July 21, 2023</div>
+                            <p>Unsecured loans provide financing without requiring collateral, making them an attractive option for many business owners. Unlike traditional loans that use assets as security, these loans are approved based on creditworthiness and business performance...</p>
+                            <p>Take the case of Sarah Chen, who secured a $150,000 unsecured loan to expand her e-commerce business. Within 18 months, she tripled her revenue while maintaining full ownership of her assets...</p>
                         </div>
                     </div>
                     <div class="blog-post">
-                        <img src="https://via.placeholder.com/400x200" alt="Blog post image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Business funding">
                         <div class="blog-post-content">
-                            <h3>Understanding Loan Interest Rates</h3>
-                            <p>A comprehensive guide to how interest rates work and how to secure the best rate.</p>
+                            <h3>How Funding Can Launch Your Business Dream</h3>
+                            <div class="blog-post-date">July 20, 2023</div>
+                            <p>Strategic funding transforms business ideas into reality. Consider the story of Marcus Johnson, who used a $250,000 loan to launch his specialty coffee chain. Two years later, he operates five locations with $2.3M in annual revenue...</p>
+                            <p>The right financing at the right time provides working capital for inventory, equipment, staffing, and marketing. It creates opportunities for scaling that bootstrap methods often can't match...</p>
                         </div>
                     </div>
                     <div class="blog-post">
-                        <img src="https://via.placeholder.com/400x200" alt="Blog post image">
+                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Interest rates">
                         <div class="blog-post-content">
-                            <h3>Debt Consolidation: Is It Right For You?</h3>
-                            <p>Explore whether combining your debts could help simplify your finances and save money.</p>
+                            <h3>Interest Rate Trends: What Borrowers Should Know</h3>
+                            <div class="blog-post-date">July 19, 2023</div>
+                            <p>Commercial loan interest rates have fluctuated significantly in recent years. In 2021, average rates dipped to 3.25% for prime borrowers, climbing to 5.75% in 2023. These changes reflect broader economic conditions including inflation and Fed policy...</p>
+                            <p>Despite rising rates, well-structured loans remain valuable tools. Take TechStart Inc., which secured $400,000 at 6.2% and used it to develop a product now generating $1.2M annually...</p>
                         </div>
                     </div>
                 </div>
@@ -586,6 +631,12 @@
             window.scrollTo(0, 0);
         }
 
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            element.classList.toggle('active');
+            answer.classList.toggle('show');
+        }
+
         // Set default page if none is active
         if (!document.querySelector('.page.active')) {
             showPage('apply-now');
@@ -599,11 +650,11 @@
             // For now, we'll just show an alert and reset the form
             alert('Thank you for your submission! We will contact you shortly.');
             this.reset();
-            
-            // In a real implementation, you would:
-            // 1. Collect form data
-            // 2. Send to your backend/email service
-            // 3. Maybe redirect to a thank you page or show a success message
+        });
+
+        // Initialize FAQs to be collapsible
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
         });
     </script>
 </body>
