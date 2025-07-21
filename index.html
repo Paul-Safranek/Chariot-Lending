@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chariot Lending - Fast and Reliable Loan Solutions</title>
+    <meta name="description" content="Get your loan approved quickly with Chariot Lending. Apply now in just 2 minutes and receive funds fast.">
+    <link rel="icon" href="https://i.imgur.com/ORdZkKg.png">
+    <!-- Google Analytics Tag (replace GA_MEASUREMENT_ID with your actual ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <style>
+        /* SF Pro Display (Apple-like font) */
+        @font-face {
+            font-family: 'SF Pro';
+            src: url('https://fonts.cdnfonts.com/css/sf-pro-display') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        :root {
+            --dark-blue: #0a2540;
+            --light-gray: #f5f5f7;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: var(--light-gray);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        nav {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .page {
+            display: none;
+            padding: 40px 0;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .hero {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            border: 2px solid var(--white);
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--white);
+            color: var(--dark-blue);
+        }
+        
+        .how-it-works {
+            background-color: var(--white);
+        }
+        
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: var(--dark-blue);
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .step h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+        
+        .faq {
+            background-color: var(--white);
+            padding: 60px 0;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: var(--dark-blue);
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            font-size: 20px;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            padding-left: 20px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .page h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--dark-blue);
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+        }
+        
+        .contact-info a {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-form {
+            margin-top: 40px;
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+        
+        .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--dark-blue);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 16px;
+        }
+        
+        .form-submit {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .form-submit:hover {
+            opacity: 0.9;
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-post {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .blog-post-content {
+            padding: 20px;
+        }
+        
+        .blog-post h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+        }
+        
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 30px 0;
+            font-size: 14px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .disclaimer {
+            margin-top: 30px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .steps {
+                flex-direction: column;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container" onclick="showPage('apply-now')">
+                <img class="logo" src="https://i.imgur.com/ORdZkKg.png" alt="Chariot Lending Logo">
+                <div class="logo-text">Chariot Lending</div>
+            </div>
+            <nav>
+                <a href="#" onclick="showPage('apply-now')">Apply Now</a>
+                <a href="#" onclick="showPage('about-me')">About Me</a>
+                <a href="#" onclick="showPage('blog')">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Apply Now Page -->
+        <section id="apply-now" class="page active">
+            <section class="hero">
+                <div class="container">
+                    <h1>Fast and Reliable Loan Solutions</h1>
+                    <p>Get the financial support you need in just 2 minutes. Our simple application process connects you with the best loan options tailored to your needs.</p>
+                    <a href="https://your-other-website.com/apply" class="cta-button">Apply in 2 minutes</a>
+                </div>
+            </section>
+
+            <section class="how-it-works">
+                <div class="container">
+                    <h2>How It Works</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-icon">📝</div>
+                            <h3>Apply Online</h3>
+                            <p>Complete our simple application form on our secure platform. It only takes 2 minutes with no obligation.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">✅</div>
+                            <h3>Get Approved</h3>
+                            <p>Our loan specialist will review your application and contact you to discuss your options and next steps.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">💰</div>
+                            <h3>Receive Funds</h3>
+                            <p>Once approved, your funds will be deposited directly into your account as quickly as the same day.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq">
+                <div class="container">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: How long will it take to get my loan?</div>
+                        <div class="faq-answer">A: That depends on your credentials as well as other various factors!</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: Where are the loans coming from?</div>
+                        <div class="faq-answer">A: The loans are coming from our reputable partner and company N2Funding</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: What should I do if I have any questions about the process?</div>
+                        <div class="faq-answer">A: Go to the <a href="#" onclick="showPage('about-me')" style="color: var(--dark-blue); font-weight: bold;">About Me</a> page and you can find the details to contact Paul. Send him a call/text or email, and he will get back to you!</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q: What is Chariot Lending?</div>
+                        <div class="faq-answer">A: Chariot Lending is a trusted loan lead generator that partners with other companies to help those in need to find the funds they need!</div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- About Me Page -->
+        <section id="about-me" class="page">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <!-- Replace with your actual image -->
+                        <img src="https://via.placeholder.com/400x500" alt="Paul - Founder of Chariot Lending">
+                    </div>
+                    <div class="about-text">
+                        <p>Welcome to Chariot Lending. I'm Paul, founder and principal loan consultant. With over [X] years of experience in the financial services industry, I've dedicated my career to helping people navigate the often complex world of lending.</p>
+                        
+                        <p>My journey began when I noticed how difficult it was for hardworking individuals to access fair and transparent loan options. Traditional banks often have rigid requirements, while many online lenders lack personalized service. I created Chariot Lending to bridge this gap - combining the efficiency of modern technology with the human touch of expert guidance.</p>
+                        
+                        <p>At Chariot Lending, we believe everyone deserves access to financial solutions that fit their unique circumstances. Whether you're consolidating debt, covering unexpected expenses, or investing in your future, we're here to guide you toward the best possible outcome.</p>
+                        
+                        <div class="contact-info">
+                            <h3>Contact Me</h3>
+                            <a href="tel:+15551234567">📞 Phone: (555) 123-4567</a>
+                            <a href="mailto:paul@chariotlending.com">✉️ Email: paul@chariotlending.com</a>
+                            <a href="https://instagram.com/yourinstagram" target="_blank">📷 Instagram: @yourinstagram</a>
+                        </div>
+
+                        <div class="contact-form">
+                            <h3>Contact Form</h3>
+                            <form id="leadForm">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="loanAmount">Desired Loan Amount</label>
+                                    <select id="loanAmount" name="loanAmount" required>
+                                        <option value="">Select an amount</option>
+                                        <option value="1,000-5,000">$1,000 - $5,000</option>
+                                        <option value="5,001-10,000">$5,001 - $10,000</option>
+                                        <option value="10,001-25,000">$10,001 - $25,000</option>
+                                        <option value="25,001-50,000">$25,001 - $50,000</option>
+                                        <option value="50,001+">$50,001+</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="form-submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Page -->
+        <section id="blog" class="page">
+            <div class="container">
+                <h2>Latest Articles</h2>
+                <div class="blog-posts">
+                    <div class="blog-post">
+                        <img src="https://via.placeholder.com/400x200" alt="Blog post image">
+                        <div class="blog-post-content">
+                            <h3>5 Tips for Improving Your Credit Score</h3>
+                            <p>Learn practical strategies to boost your credit score and qualify for better loan terms.</p>
+                        </div>
+                    </div>
+                    <div class="blog-post">
+                        <img src="https://via.placeholder.com/400x200" alt="Blog post image">
+                        <div class="blog-post-content">
+                            <h3>Understanding Loan Interest Rates</h3>
+                            <p>A comprehensive guide to how interest rates work and how to secure the best rate.</p>
+                        </div>
+                    </div>
+                    <div class="blog-post">
+                        <img src="https://via.placeholder.com/400x200" alt="Blog post image">
+                        <div class="blog-post-content">
+                            <h3>Debt Consolidation: Is It Right For You?</h3>
+                            <p>Explore whether combining your debts could help simplify your finances and save money.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">© 2023 Chariot Lending. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="#" onclick="showPage('apply-now')">Apply Now</a>
+                    <a href="#" onclick="showPage('about-me')">About Me</a>
+                    <a href="#" onclick="showPage('blog')">Blog</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>Disclaimer: Chariot Lending is not a direct lender but connects borrowers with potential lending partners. Loan approval is not guaranteed and depends on the lender's assessment of your creditworthiness. Rates and terms vary by lender and your individual circumstances. Not all applicants will qualify for the maximum loan amount or most favorable terms.</p>
+                <p>This service is not available in all states, and the states serviced may change from time to time without notice. We do not endorse any particular lender or loan product. We do not charge you for our service.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Set default page if none is active
+        if (!document.querySelector('.page.active')) {
+            showPage('apply-now');
+        }
+
+        // Form submission handler
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For now, we'll just show an alert and reset the form
+            alert('Thank you for your submission! We will contact you shortly.');
+            this.reset();
+            
+            // In a real implementation, you would:
+            // 1. Collect form data
+            // 2. Send to your backend/email service
+            // 3. Maybe redirect to a thank you page or show a success message
+        });
+    </script>
+</body>
+</html>
