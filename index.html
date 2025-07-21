@@ -24,6 +24,7 @@
             --light-gray: #f6f9fc;
             --white: #ffffff;
             --success-green: #28a745;
+            --error-red: #dc3545;
         }
         
         body {
@@ -353,6 +354,12 @@
             color: #155724;
             display: block;
         }
+
+        #form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
         
         .blog-posts {
             display: grid;
@@ -628,7 +635,7 @@
 
                         <div class="contact-form">
                             <h3>Contact Form</h3>
-                            <form id="leadForm">
+                            <form id="leadForm" action="https://formspree.io/f/paulsafranek97@gmail.com" method="POST">
                                 <div class="form-group">
                                     <label for="name">Full Name</label>
                                     <input type="text" id="name" name="name" required>
@@ -675,13 +682,13 @@
                             <span class="read-more">Read More</span>
                         </div>
                         <div class="blog-post-full-content">
-                            <p>Every great business starts with an idea, but turning that idea into a reality often requires a critical ingredient: capital. For aspiring entrepreneurs, the gap between a brilliant concept and a market-ready product can seem vast. This is where strategic business funding comes in, not as a debt burden, but as a powerful catalyst for growth, innovation, and success. While bootstrapping has its merits, securing external funding can accelerate your journey, mitigate personal financial risk, and unlock opportunities that would otherwise remain out of reach. It’s about more than just money; it’s about acquiring the resources to build a solid foundation, scale efficiently, and make a lasting impact in your industry.</p>
+                            <p>Every great business starts with an idea, but turning that idea into a reality often requires a critical ingredient: capital. For aspiring entrepreneurs, the gap between a brilliant concept and a market-ready product can seem vast. This is where strategic business funding comes in, not as a debt burden, but as a powerful catalyst for growth, innovation, and success. While bootstrapping has its merits, securing external funding can accelerate your journey, mitigate personal financial risk, and unlock opportunities that would otherwise remain out of reach. It's about more than just money; it's about acquiring the resources to build a solid foundation, scale efficiently, and make a lasting impact in your industry.</p>
                             <h4>From Dream to Reality: The Power of Initial Capital</h4>
                             <p>Imagine trying to build a house without the necessary tools or materials. You might make slow progress, but the structure would be weak and vulnerable. The same principle applies to starting a business. Initial funding provides the essential tools for construction: product development, market research, legal fees, inventory, and building a talented team. It allows you to operate from a position of strength rather than scarcity.</p>
                             <p>Consider the story of "FreshFare," a farm-to-table meal delivery service. The founder, Maria, had a passion for healthy eating and a network of local farmers, but she lacked the capital for a commercial kitchen and a delivery fleet. For months, she operated out of her home kitchen, serving a handful of clients. Her growth was stalled. After securing a $150,000 small business loan, everything changed. She leased a professional kitchen, hired two chefs, and purchased three refrigerated vans. Within six months, FreshFare was serving over 500 clients weekly across three cities. The funding didn't just provide cash; it provided the infrastructure for her dream to flourish. It allowed her to focus on quality and customer service, knowing the operational backbone was secure.</p>
                             <h4>Scaling New Heights: Funding as a Growth Engine</h4>
                             <p>Once a business is established, the next challenge is scaling. This is where many bootstrapped companies hit a plateau. Scaling requires significant investment in marketing, expanding product lines, entering new markets, and upgrading technology. Attempting to fund this expansion solely through profits can be a slow, arduous process, and you risk being outpaced by better-funded competitors.</p>
-                            <p>Strategic funding acts as a growth engine, enabling you to seize opportunities as they arise. Let’s look at the case of "CodeCrafters," a boutique software development agency. They had a strong reputation and a steady stream of projects but were constantly turning down larger, more lucrative contracts because they couldn't afford to hire enough senior developers. They were trapped in a cycle of small projects and slow growth.</p>
+                            <p>Strategic funding acts as a growth engine, enabling you to seize opportunities as they arise. Let's look at the case of "CodeCrafters," a boutique software development agency. They had a strong reputation and a steady stream of projects but were constantly turning down larger, more lucrative contracts because they couldn't afford to hire enough senior developers. They were trapped in a cycle of small projects and slow growth.</p>
                             <blockquote>The founders decided to seek $400,000 in funding. This capital injection allowed them to hire a team of five elite developers and a dedicated sales manager. The impact was immediate. They landed a multi-million dollar contract with a major corporation that they previously couldn't have handled. The funding didn't just increase their revenue; it elevated their brand, attracted top talent, and positioned them as a leader in their niche. Within two years, CodeCrafters was acquired by a larger tech firm for a sum that provided a massive return for the founders and their investors. This is the transformative power of scaling with capital.</blockquote>
                             <h4>The Upsides of Starting with Funding</h4>
                             <p>Choosing to start your business with external funding offers a multitude of advantages that can significantly increase your chances of long-term success:</p>
@@ -715,7 +722,7 @@
                             <h4>Case Study: Adapting to the New Rate Environment</h4>
                             <blockquote>Consider "Innovate Manufacturing," a mid-sized company in Michigan that produces specialized automotive parts. In 2021, they secured a $1 million equipment loan at a fixed rate of 3.8%. This low rate was instrumental in their decision to upgrade their production line. Fast forward to 2024, when they needed an additional $500,000 for a warehouse expansion. The quotes they received were for variable-rate loans starting at 8.5%. The sticker shock was real. However, the company's leadership had been monitoring the rate environment. Instead of abandoning their plans, they adapted. They worked with a financial partner to secure a loan with a fixed rate for the first three years, providing them with cost certainty during the critical initial phase of the expansion. They also re-evaluated their project timeline, phasing the expansion to better manage the higher debt service costs. This strategic approach allowed them to proceed with their growth plans, even in a less favorable rate environment.</blockquote>
                             <h4>What This Means for Borrowers Today</h4>
-                            <p>Navigating this landscape requires a strategic, informed approach. Here’s what business owners should know:</p>
+                            <p>Navigating this landscape requires a strategic, informed approach. Here's what business owners should know:</p>
                             <ul>
                                 <li><strong>Variable vs. Fixed Rates:</strong> In a high-rate environment, the choice between a variable and a fixed-rate loan is more critical than ever. A fixed rate provides predictability and protects you from future rate hikes. A variable rate might offer a lower initial rate but carries the risk of increasing payments if the benchmark rates go up. Your choice should depend on your risk tolerance and your business's cash flow stability.</li>
                                 <li><strong>The Importance of a Strong Financial Profile:</strong> When rates are high, lenders become more selective. A strong credit score, healthy cash flow, and a solid business plan are no longer just helpful—they are essential. Before applying for a loan, take steps to improve your financial profile to qualify for the best possible terms.</li>
@@ -872,23 +879,60 @@
             
             // --- Initial Page Load ---
             showPage(null, 'apply-now');
+
+            // --- Enhanced Form Submission with Formspree ---
+            const leadForm = document.getElementById('leadForm');
+            if (leadForm) {
+                leadForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const form = e.target;
+                    const messageDiv = document.getElementById('form-message');
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    
+                    // Store original button text
+                    const originalButtonText = submitButton.textContent;
+                    
+                    // Show loading state
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            messageDiv.textContent = 'Thank you for your submission! We will contact you shortly.';
+                            messageDiv.className = 'success';
+                            form.reset();
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        messageDiv.textContent = 'There was a problem submitting your form. Please try again or contact us directly.';
+                        messageDiv.className = 'error';
+                        console.error('Form submission error:', error);
+                    } finally {
+                        // Reset button state
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
+                        
+                        // Scroll to message
+                        messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            messageDiv.textContent = '';
+                            messageDiv.className = '';
+                        }, 5000);
+                    }
+                });
+            }
         });
-
-
-        // --- Contact Form Submission ---
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const form = this;
-            const messageDiv = document.getElementById('form-message');
-            messageDiv.textContent = 'Thank you for your submission! We will contact you shortly.';
-            messageDiv.className = 'success';
-            setTimeout(() => {
-                form.reset();
-                messageDiv.textContent = '';
-                messageDiv.className = '';
-            }, 4000);
-        });
-
     </script>
 </body>
 </html>
