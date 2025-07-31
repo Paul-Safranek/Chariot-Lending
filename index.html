@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chariot Lending - Fast and Reliable Loan Solutions</title>
-    <meta name="description" content="Get your loan approved quickly with Chariot Lending. Apply now in just 2 minutes and receive funds fast. Explore in-depth articles on business funding, unsecured lending, and more.">
+    <meta name="description" content="Get your loan approved quickly with Chariot Lending. Apply now in just 2 minutes and receive funds fast. Explore in-depth articles on business funding, unsecured loans, and interest rates.">
     <link rel="icon" href="https://i.imgur.com/kmffg87.png">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1GC631KXQZ"></script>
@@ -15,7 +15,10 @@
       gtag('config', 'G-1GC631KXQZ');
     </script>
     <style>
+        /* SF Pro Display (Apple-like font) */
+        /* Note: Using a generic font stack as a fallback for reliability. */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        
         :root {
             --dark-blue: #0a2540;
             --light-gray: #f6f9fc;
@@ -23,6 +26,7 @@
             --success-green: #28a745;
             --error-red: #dc3545;
         }
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin: 0;
@@ -32,11 +36,13 @@
             background-color: var(--light-gray);
             scroll-behavior: smooth;
         }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+        
         header {
             background-color: var(--dark-blue);
             color: var(--white);
@@ -46,32 +52,38 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
+
         .logo-container {
             display: flex;
             align-items: center;
             cursor: pointer;
         }
+        
         .logo {
             width: 50px;
             height: 50px;
             margin-right: 15px;
             object-fit: contain;
         }
+        
         .logo-text {
             font-size: 28px;
             font-weight: bold;
         }
+        
         nav {
             display: flex;
             gap: 25px;
             margin-top: 10px;
         }
+        
         nav a {
             color: var(--white);
             text-decoration: none;
@@ -80,45 +92,44 @@
             transition: opacity 0.3s;
             padding: 5px 0;
         }
+        
         nav a:hover {
             opacity: 0.8;
         }
+        
         .page {
             display: none;
             padding: 40px 0;
             animation: fadeIn 0.5s;
         }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        
         .page.active {
             display: block;
         }
+        
         .hero {
             background-color: var(--dark-blue);
             color: var(--white);
             padding: 60px 0;
             text-align: center;
         }
+        
         .hero h1 {
             font-size: 42px;
             margin-bottom: 20px;
         }
+        
         .hero p {
             font-size: 20px;
             max-width: 700px;
             margin: 0 auto 30px;
         }
-        .hero .hero-highlight {
-            font-size: 18px;
-            margin-bottom: 18px;
-            color: #fffbe0;
-            background: rgba(10,37,64,0.14);
-            border-radius: 8px;
-            padding: 10px;
-            display: inline-block;
-        }
+        
         .cta-button {
             display: inline-block;
             background-color: var(--white);
@@ -131,57 +142,403 @@
             border: 2px solid var(--white);
             transition: all 0.3s;
         }
+        
         .cta-button:hover {
             background-color: transparent;
             color: var(--white);
         }
-        .chariot-highlights {
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 18px rgba(10,37,64,0.07);
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 40px 30px;
-            font-size: 19px;
+        
+        .how-it-works {
+            background-color: var(--white);
+            padding: 60px 0;
         }
-        .chariot-highlights h2 {
-            color: var(--dark-blue);
-            font-size: 32px;
+        
+        .how-it-works h2, .faq h2, #blog h2 {
             text-align: center;
-            margin-bottom: 30px;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: var(--dark-blue);
         }
-        .chariot-highlights ul {
-            list-style: disc inside;
+        
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        
+        .step h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+        
+        .faq {
+            background-color: var(--light-gray);
+            padding: 60px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #e0e6ed;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            background-color: var(--white);
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            font-size: 20px;
+            color: var(--dark-blue);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 28px;
+            font-weight: normal;
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .faq-answer p {
             margin: 0;
-            padding: 0;
+            padding-bottom: 20px;
         }
-        .chariot-highlights li {
-            margin-bottom: 18px;
-            line-height: 2;
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 40px;
         }
-        .chariot-highlights li strong {
-            color: #0a2540;
+        
+        .about-content h2 {
+            flex-basis: 100%;
+            text-align: center;
+            font-size: 32px;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
         }
-        .chariot-highlights span[style] {
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+        }
+        
+        .contact-info a {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+            text-decoration: none;
             font-weight: bold;
         }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-form {
+            margin-top: 40px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            border: 1px solid #e0e6ed;
+        }
+        
+        .contact-form h3 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--dark-blue);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .form-submit {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        .form-submit:hover {
+            opacity: 0.9;
+        }
+
+        #form-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+
+        #form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        #form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for blog posts */
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .blog-post {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            transition: box-shadow 0.3s;
+        }
+        
+        .blog-post-summary {
+            padding: 25px;
+            cursor: pointer;
+        }
+
+        .blog-post-summary:hover {
+            background-color: #f6f9fc;
+        }
+        
+        .blog-post-summary h3 {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+        }
+        
+        .blog-post-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .blog-post-excerpt {
+            margin-bottom: 15px;
+            color: #525f7f;
+        }
+
+        .read-more {
+            font-weight: bold;
+            color: var(--dark-blue);
+            text-decoration: none;
+        }
+
+        .read-more::after {
+            content: ' ▼';
+            font-size: 12px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .blog-post.active .read-more::after {
+            transform: rotate(180deg);
+        }
+        
+        .blog-post-full-content {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .blog-post-full-content h4 {
+            font-size: 1.2em;
+            color: var(--dark-blue);
+            margin-top: 25px;
+        }
+
+        .blog-post-full-content p, .blog-post-full-content ul {
+            margin-bottom: 15px;
+        }
+
+        .blog-post-full-content ul {
+            padding-left: 20px;
+        }
+
+        .blog-post-full-content li {
+            margin-bottom: 10px;
+        }
+
+        .blog-post-full-content blockquote {
+            border-left: 4px solid var(--dark-blue);
+            padding-left: 15px;
+            margin-left: 0;
+            font-style: italic;
+            color: #525f7f;
+        }
+        
         .referral-note {
             text-align: center;
-            font-size: 17px;
-            margin: 32px auto;
-            max-width: 700px;
-            background: #fffbe0;
-            border-radius: 10px;
-            padding: 16px 12px;
-            box-shadow: 0 2px 8px rgba(10,37,64,0.03);
+            padding: 20px;
+            background-color: #f0f8ff;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        @media (max-width: 600px) {
-            .chariot-highlights {
-                padding: 25px 8px;
-                font-size: 16px;
+        
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 30px 0;
+            font-size: 14px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .disclaimer {
+            margin-top: 30px;
+            font-size: 12px;
+            opacity: 0.7;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
             }
-            .chariot-highlights h2 {
-                font-size: 24px;
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
             }
         }
     </style>
@@ -202,38 +559,22 @@
             </div>
         </div>
     </header>
+
     <main>
         <!-- Apply Now Page -->
-        <section id="apply-now" class="page active">
+        <section id="apply-now" class="page">
             <section class="hero">
                 <div class="container">
                     <h1>Fast and Reliable Loan Solutions</h1>
                     <p>Get the financial support you need in just 2 minutes. Our simple application process connects you with the best loan options tailored to your needs.</p>
-                    <div class="hero-highlight">No credit impact to apply. Funds deposited directly—often as fast as same day! Eligible for US residents ($32k+ income, 650+ credit score).</div>
                     <a href="https://form.jotform.com/n2funding/loan-application-form-" class="cta-button" target="_blank" rel="noopener noreferrer">Apply in 2 minutes</a>
                 </div>
             </section>
-            <div class="chariot-highlights">
-                <h2>Why Choose Chariot Lending?</h2>
-                <ul>
-                    <li><strong>Eligibility:</strong> US residents only, income $32,000+, credit score 650+</li>
-                    <li><strong>Flexible Funding:</strong> Request $10,000 – $400,000 for any purpose</li>
-                    <li><strong>No Prepayment Penalty:</strong> Pay off your loan early—no extra fees</li>
-                    <li><strong>Ideal For:</strong> Real estate, small businesses, investors, startups, personal needs</li>
-                    <li><strong>Fast Closing:</strong> Receive funds in 3–7 days</li>
-                    <li><strong>No Credit Impact:</strong> Applying does not affect your credit score</li>
-                    <li><strong>Unlimited Rounds:</strong> Qualify for multiple rounds of funding</li>
-                    <li><strong>Expert Lenders:</strong> Certified professionals with centuries of experience</li>
-                    <li><strong>Proven Results:</strong> $14,000,000,000 funded in 2024</li>
-                    <li><strong>Direct Deposit:</strong> Funds go straight to your checking account</li>
-                    <li><strong>Negotiation Done For You:</strong> Our team works directly with lenders—one quick call, and we handle the rest</li>
-                    <li><strong>Low Rates:</strong> Rates as low as <span style="color: green;">5%</span></li>
-                    <li><strong>Tax Benefits:</strong> Success fees are tax-deductible—your only cost is the interest rate</li>
-                </ul>
-            </div>
+
             <div class="referral-note">
-                When filling out forms, or talking to my lending sources, please note that your referral came from "Paul Safranek" so we know who to connect you with. <br><strong>Mention 'Paul Safranek' for priority service from our expert lending team.</strong>
+                When filling out forms, or talking to my lending sources, please note that your referral came from "Paul Safranek" so we know who to connect you with.
             </div>
+
             <section class="how-it-works">
                 <div class="container">
                     <h2>How It Works</h2>
@@ -241,58 +582,29 @@
                         <div class="step">
                             <div class="step-icon">📝</div>
                             <h3>Apply Online</h3>
-                            <p>Complete our simple application form on our secure platform. It only takes 2 minutes with no obligation. <br><strong>Eligibility:</strong> US residents ($32k+ income, 650+ credit score), no credit impact.</p>
+                            <p>Complete our simple application form on our secure platform. It only takes 2 minutes with no obligation.</p>
                         </div>
                         <div class="step">
                             <div class="step-icon">✅</div>
                             <h3>Get Approved</h3>
-                            <p>Our loan specialist will review your application and contact you to discuss your options and next steps.<br>Our specialists have centuries of experience, $14B funded in 2024, and negotiate on your behalf for the best rates.</p>
+                            <p>Our loan specialist will review your application and contact you to discuss your options and next steps.</p>
                         </div>
                         <div class="step">
                             <div class="step-icon">💰</div>
                             <h3>Receive Funds</h3>
-                            <p>Once approved, your funds will be deposited directly into your account as quickly as the same day.<br>Get $10,000–$400,000 for any purpose, unlimited rounds, no prepayment penalty, direct deposit.<br>Fees are tax-deductible; your only cost is interest!</p>
+                            <p>Once approved, your funds will be deposited directly into your account as quickly as the same day.</p>
                         </div>
                     </div>
                 </div>
             </section>
+
             <section class="faq">
                 <div class="container">
                     <h2>Frequently Asked Questions</h2>
                     <div class="faq-item">
                         <div class="faq-question">Q: How long will it take to get my loan?</div>
                         <div class="faq-answer">
-                            <p>A: Most loans close in <strong>3–7 days</strong> and funds are sent by direct deposit.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q: Will applying affect my credit?</div>
-                        <div class="faq-answer">
-                            <p>A: No, applying does <strong>NOT</strong> impact your credit score.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q: Are there tax benefits?</div>
-                        <div class="faq-answer">
-                            <p>A: Success fees are <strong>tax-deductible</strong>; your only cost is the interest rate.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q: What rates are available?</div>
-                        <div class="faq-answer">
-                            <p>A: Rates as low as <strong>5%</strong>.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q: Who are the lenders?</div>
-                        <div class="faq-answer">
-                            <p>A: Certified professionals with centuries of experience and <strong>$14B funded in 2024</strong>.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q: What can I use the funds for?</div>
-                        <div class="faq-answer">
-                            <p>A: Real estate, small businesses, investing, startups, personal needs.</p>
+                            <p>A: That depends on your credentials as well as other various factors!</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -304,7 +616,7 @@
                     <div class="faq-item">
                         <div class="faq-question">Q: What should I do if I have any questions about the process?</div>
                         <div class="faq-answer">
-                            <p>A: Go to the <a href="#" onclick="showPage(event, 'about-me')" style="color: var(--dark-blue); font-weight: bold;">About Me</a> page and you can find the details to contact us with your questions.</p>
+                            <p>A: Go to the <a href="#" onclick="showPage(event, 'about-me')" style="color: var(--dark-blue); font-weight: bold;">About Me</a> page and you can find the details to contact Paul. Send him a call/text or email, and he will get back to you!</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -316,46 +628,392 @@
                 </div>
             </section>
         </section>
+
         <!-- About Me Page -->
         <section id="about-me" class="page">
             <div class="container">
-                <h1>About Me</h1>
-                <p>Hi! I'm Paul Safranek. I specialize in helping individuals and businesses secure the funding they need through trusted lending partners.</p>
-                <h2>Contact Information</h2>
-                <ul>
-                    <li>Email: <a href="mailto:paul@chariotlending.com">paul@chariotlending.com</a></li>
-                    <li>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></li>
-                </ul>
-                <h2>How I Can Help</h2>
-                <p>I work directly with lenders to negotiate the best rates and terms for you. Whether you need funding for real estate, business, or personal needs, I can guide you through every step of the process.</p>
-                <h2>Referral Instructions</h2>
-                <p>When speaking with my lending sources or filling out forms, please mention that you were referred by "Paul Safranek" for priority service.</p>
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <div class="about-image">
+                        <img src="https://i.imgur.com/2HJysUy.jpeg" alt="Paul Safranek - Founder of Chariot Lending" onerror="this.onerror=null;this.src='https://placehold.co/400x400/cccccc/ffffff?text=Paul+S.';">
+                    </div>
+                    <div class="about-text">
+                        <p>I'm Paul Safranek, a 24-year-old entrepreneur with a passion for helping others achieve their financial goals. I founded Chariot Lending to bridge the gap between borrowers and reputable funding sources.</p>
+                        <p>With partnerships at N2Funding and Berkadia Associates, I've created a streamlined process to connect people with the capital they need. My background includes building a successful landscaping business from the ground up and earning degrees in Philosophy and Economics from Eastern Michigan University.</p>
+                        <p>Chariot Lending represents my commitment to transparent, accessible financing. I launched the company with my own capital and serve as both owner and CEO. My approach combines business acumen with a genuine desire to help clients navigate the lending landscape.</p>
+                        
+                        <div class="contact-info">
+                            <h3>Contact Me</h3>
+                            <a href="tel:734-845-8836">📞 Phone: (734) 845-8836</a>
+                            <a href="mailto:paulsafranek97@gmail.com">✉️ Email: paulsafranek97@gmail.com</a>
+                            <a href="https://www.instagram.com/paulsafranek97/" target="_blank" rel="noopener noreferrer">📷 Instagram: @paulsafranek97</a>
+                        </div>
+
+                        <div class="contact-form">
+                            <h3>Contact Form</h3>
+                            <form id="leadForm" action="https://formsubmit.co/paulsafranek97@gmail.com" method="POST">
+                                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                                <input type="hidden" name="_template" value="table">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="loanAmount">Desired Loan Amount</label>
+                                    <select id="loanAmount" name="loanAmount" required>
+                                        <option value="">Select an amount</option>
+                                        <option value="10,000-50,000">$10,000 - $50,000</option>
+                                        <option value="50,001-100,000">$50,001 - $100,000</option>
+                                        <option value="100,001-200,000">$100,001 - $200,000</option>
+                                        <option value="200,001-300,000">$200,001 - $300,000</option>
+                                        <option value="300,001-400,000">$300,001 - $400,000</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="form-submit">Submit</button>
+                                <div id="form-message"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+
         <!-- Blog Page -->
         <section id="blog" class="page">
             <div class="container">
-                <h1>Blog</h1>
-                <article>
-                    <h2>Business Funding Strategies in 2024</h2>
-                    <p>Discover modern approaches for securing business capital, including unsecured lending, working capital loans, and creative investment solutions.</p>
-                </article>
-                <article>
-                    <h2>Understanding Unsecured Lending</h2>
-                    <p>Learn about the benefits and risks of unsecured lending, and why it may be the right solution for you.</p>
-                </article>
+                <h2>Latest Articles</h2>
+                <div class="blog-posts">
+                    <!-- New Blog Post 1 -->
+                    <div class="blog-post">
+                        <div class="blog-post-summary">
+                            <h3>The Entrepreneur's Catalyst: How Smart Funding Can Launch Your Business Dream</h3>
+                            <div class="blog-post-date">July 21, 2025</div>
+                            <p class="blog-post-excerpt">Every great business starts with an idea, but turning that idea into a reality often requires a critical ingredient: capital. Discover how strategic funding can be the catalyst that transforms your vision into a thriving enterprise...</p>
+                            <span class="read-more">Read More</span>
+                        </div>
+                        <div class="blog-post-full-content">
+                            <p>Every great business starts with an idea, but turning that idea into a reality often requires a critical ingredient: capital. For aspiring entrepreneurs, the gap between a brilliant concept and a market-ready product can seem vast. This is where strategic business funding comes in, not as a debt burden, but as a powerful catalyst for growth, innovation, and success. While bootstrapping has its merits, securing external funding can accelerate your journey, mitigate personal financial risk, and unlock opportunities that would otherwise remain out of reach. It's about more than just money; it's about acquiring the resources to build a solid foundation, scale efficiently, and make a lasting impact in your industry.</p>
+                            <h4>From Dream to Reality: The Power of Initial Capital</h4>
+                            <p>Imagine trying to build a house without the necessary tools or materials. You might make slow progress, but the structure would be weak and vulnerable. The same principle applies to starting a business. Initial funding provides the essential tools for construction: product development, market research, legal fees, inventory, and building a talented team. It allows you to operate from a position of strength rather than scarcity.</p>
+                            <p>Consider the story of "FreshFare," a farm-to-table meal delivery service. The founder, Maria, had a passion for healthy eating and a network of local farmers, but she lacked the capital for a commercial kitchen and a delivery fleet. For months, she operated out of her home kitchen, serving a handful of clients. Her growth was stalled. After securing a $150,000 small business loan, everything changed. She leased a professional kitchen, hired two chefs, and purchased three refrigerated vans. Within six months, FreshFare was serving over 500 clients weekly across three cities. The funding didn't just provide cash; it provided the infrastructure for her dream to flourish. It allowed her to focus on quality and customer service, knowing the operational backbone was secure.</p>
+                            <h4>Scaling New Heights: Funding as a Growth Engine</h4>
+                            <p>Once a business is established, the next challenge is scaling. This is where many bootstrapped companies hit a plateau. Scaling requires significant investment in marketing, expanding product lines, entering new markets, and upgrading technology. Attempting to fund this expansion solely through profits can be a slow, arduous process, and you risk being outpaced by better-funded competitors.</p>
+                            <p>Strategic funding acts as a growth engine, enabling you to seize opportunities as they arise. Let's look at the case of "CodeCrafters," a boutique software development agency. They had a strong reputation and a steady stream of projects but were constantly turning down larger, more lucrative contracts because they couldn't afford to hire enough senior developers. They were trapped in a cycle of small projects and slow growth.</p>
+                            <blockquote>The founders decided to seek $400,000 in funding. This capital injection allowed them to hire a team of five elite developers and a dedicated sales manager. The impact was immediate. They landed a multi-million dollar contract with a major corporation that they previously couldn't have handled. The funding didn't just increase their revenue; it elevated their brand, attracted top talent, and positioned them as a leader in their niche. Within two years, CodeCrafters was acquired by a larger tech firm for a sum that provided a massive return for the founders and their investors. This is the transformative power of scaling with capital.</blockquote>
+                            <h4>The Upsides of Starting with Funding</h4>
+                            <p>Choosing to start your business with external funding offers a multitude of advantages that can significantly increase your chances of long-term success:</p>
+                            <ul>
+                                <li><strong>Speed to Market:</strong> In today's fast-paced world, being first or early to market can be a decisive advantage. Funding allows you to develop and launch your product or service quickly, capturing market share before competitors emerge.</li>
+                                <li><strong>Attracting Top Talent:</strong> To build a great company, you need great people. Offering competitive salaries, benefits, and equity is crucial for attracting and retaining top talent. Funding gives you the ability to build a dream team from day one.</li>
+                                <li><strong>Credibility and Validation:</strong> Securing funding from reputable sources acts as a powerful vote of confidence in your business model and your team. This can make it easier to attract customers, partners, and future investors.</li>
+                                <li><strong>Focus on Growth, Not Just Survival:</strong> When you're not constantly worried about making payroll or paying rent, you can focus on the bigger picture: strategic growth, innovation, and building a sustainable business. Funding provides the breathing room to think long-term.</li>
+                                <li><strong>Resource for Mentorship:</strong> Often, funding partners and lenders, like us at Chariot Lending, provide more than just capital. They offer invaluable experience, industry connections, and mentorship that can help you navigate the challenges of entrepreneurship.</li>
+                            </ul>
+                            <p>Starting a business is a bold endeavor. While the journey is challenging, you don't have to walk it alone or with limited resources. Strategic funding is a tool that empowers you to build faster, scale higher, and turn your entrepreneurial dream into a powerful reality. At Chariot Lending, we specialize in connecting passionate founders with the capital they need to build the future. Your vision deserves more than a shoestring budget; it deserves the chance to thrive.</p>
+                        </div>
+                    </div>
+                    <!-- New Blog Post 2 -->
+                    <div class="blog-post">
+                        <div class="blog-post-summary">
+                            <h3>Navigating the Numbers: A Borrower's Guide to Interest Rate Trends</h3>
+                            <div class="blog-post-date">July 20, 2025</div>
+                            <p class="blog-post-excerpt">Understanding the ebb and flow of interest rates is crucial for any business owner considering a loan. We break down the trends of the past few years, explain the forces behind them, and offer strategic advice for borrowing in today's market...</p>
+                            <span class="read-more">Read More</span>
+                        </div>
+                        <div class="blog-post-full-content">
+                            <p>For any business owner, borrowing capital is one of the most significant financial decisions they will make. At the heart of this decision lies a single, powerful number: the interest rate. This percentage dictates the cost of borrowing and can have a profound impact on a company's cash flow, profitability, and overall financial health. The world of interest rates is not static; it's a dynamic landscape shaped by economic policies, market forces, and global events. Understanding the trends of the past few years, the factors driving them, and how to strategically navigate the current environment is essential for securing favorable loan terms and fueling sustainable growth.</p>
+                            <h4>A Look Back: The Rollercoaster of Recent Interest Rates</h4>
+                            <p>The period from 2020 to the present has been one of the most volatile in recent economic history, and interest rates have been on a veritable rollercoaster ride. To understand where we are, we must first see where we've been.</p>
+                            <ul>
+                                <li><strong>The Pandemic Plunge (2020-2021):</strong> In response to the economic shutdown caused by the COVID-19 pandemic, central banks around the world, including the U.S. Federal Reserve, took aggressive action. The Fed slashed its benchmark federal funds rate to near-zero (0-0.25%). This move was designed to encourage borrowing and spending to keep the economy afloat. For businesses, this translated into historically low interest rates. Prime borrowers could often secure commercial loans with rates hovering between 3.25% and 4.5%. It was an unprecedented era of "cheap money," and many businesses seized the opportunity to refinance existing debt or fund new projects.</li>
+                                <li><strong>The Inflationary Surge and the Fed's Pivot (2022-2023):</strong> As the global economy reopened, a combination of supply chain disruptions, pent-up consumer demand, and geopolitical events led to a rapid rise in inflation, reaching levels not seen in decades. To combat this, the Federal Reserve executed one of the most aggressive series of rate hikes in its history. Between March 2022 and late 2023, the federal funds rate was increased eleven times, eventually settling in the 5.25% to 5.50% range. This sharp pivot had a direct and immediate impact on borrowing costs. The prime rate, which commercial banks charge their most creditworthy customers, surged in lockstep. Average rates for small business loans climbed dramatically, often ranging from 7.5% to over 10%, depending on the lender and the borrower's risk profile.</li>
+                                <li><strong>The Plateau and an Uncertain Future (2024-Present):</strong> For much of 2024 and into 2025, the Federal Reserve has held rates steady, adopting a "wait-and-see" approach. While inflation has cooled from its peak, it has remained stubbornly above the Fed's 2% target. This has created a high-rate environment that feels like the new normal for many borrowers. The era of near-zero rates is a distant memory, and businesses must now plan for a higher cost of capital.</li>
+                            </ul>
+                            <h4>Case Study: Adapting to the New Rate Environment</h4>
+                            <blockquote>Consider "Innovate Manufacturing," a mid-sized company in Michigan that produces specialized automotive parts. In 2021, they secured a $1 million equipment loan at a fixed rate of 3.8%. This low rate was instrumental in their decision to upgrade their production line. Fast forward to 2024, when they needed an additional $500,000 for a warehouse expansion. The quotes they received were for variable-rate loans starting at 8.5%. The sticker shock was real. However, the company's leadership had been monitoring the rate environment. Instead of abandoning their plans, they adapted. They worked with a financial partner to secure a loan with a fixed rate for the first three years, providing them with cost certainty during the critical initial phase of the expansion. They also re-evaluated their project timeline, phasing the expansion to better manage the higher debt service costs. This strategic approach allowed them to proceed with their growth plans, even in a less favorable rate environment.</blockquote>
+                            <h4>What This Means for Borrowers Today</h4>
+                            <p>Navigating this landscape requires a strategic, informed approach. Here's what business owners should know:</p>
+                            <ul>
+                                <li><strong>Variable vs. Fixed Rates:</strong> In a high-rate environment, the choice between a variable and a fixed-rate loan is more critical than ever. A fixed rate provides predictability and protects you from future rate hikes. A variable rate might offer a lower initial rate but carries the risk of increasing payments if the benchmark rates go up. Your choice should depend on your risk tolerance and your business's cash flow stability.</li>
+                                <li><strong>The Importance of a Strong Financial Profile:</strong> When rates are high, lenders become more selective. A strong credit score, healthy cash flow, and a solid business plan are no longer just helpful—they are essential. Before applying for a loan, take steps to improve your financial profile to qualify for the best possible terms.</li>
+                                <li><strong>Explore All Options:</strong> Don't limit your search to traditional banks. Alternative lenders, credit unions, and financing partners like Chariot Lending often have more flexible criteria and can offer creative financing solutions tailored to your specific needs.</li>
+                                <li><strong>Focus on ROI:</strong> With a higher cost of capital, the return on investment (ROI) for your project becomes even more important. Be prepared to demonstrate exactly how the loan will generate revenue and contribute to your bottom line. A clear, compelling ROI case can make all the difference to a lender.</li>
+                            </ul>
+                            <p>While interest rates may be higher than they were a few years ago, strategic borrowing remains one of the most powerful tools for business growth. The key is to approach the process with a clear understanding of the market, a strong financial foundation, and a partner who can help you navigate the complexities. At Chariot Lending, we pride ourselves on helping businesses find the right funding solutions, regardless of the prevailing economic winds.</p>
+                        </div>
+                    </div>
+                    <!-- New Blog Post 3 -->
+                    <div class="blog-post">
+                        <div class="blog-post-summary">
+                            <h3>Unlocking Potential: A Deep Dive into Unsecured Business Loans</h3>
+                            <div class="blog-post-date">July 19, 2025</div>
+                            <p class="blog-post-excerpt">For many entrepreneurs, the word "collateral" can be a major roadblock to securing funding. Unsecured business loans offer a powerful alternative, providing access to capital based on your business's strength, not its assets. Learn how they work and if they're right for you...</p>
+                            <span class="read-more">Read More</span>
+                        </div>
+                        <div class="blog-post-full-content">
+                            <p>In the world of business financing, the quest for capital often leads to a critical question: "What can you offer as collateral?" For many startups, service-based businesses, and tech companies, the answer is "not much." Traditional loans are often secured, meaning the borrower must pledge valuable assets like real estate, equipment, or inventory as a guarantee. If the loan isn't repaid, the lender can seize these assets. This requirement can be a significant barrier for businesses that are asset-light but rich in potential. This is where unsecured business loans emerge as a game-changing financial tool. An unsecured loan provides access to capital based on the creditworthiness and cash flow of the business, not its physical assets. It's a vote of confidence in your business's future, and for the right company, it can be the key that unlocks explosive growth.</p>
+                            <h4>How Do Unsecured Loans Work?</h4>
+                            <p>Unlike their secured counterparts, unsecured loans do not require you to pledge specific collateral. So, what do lenders look at instead? The approval process for an unsecured loan is a holistic assessment of your business's financial health and viability. Lenders typically focus on several key factors:</p>
+                            <ul>
+                                <li><strong>Credit Score:</strong> Both your personal and business credit scores are paramount. A strong credit history demonstrates a track record of responsible borrowing and timely repayments. It's one of the primary indicators of your reliability as a borrower.</li>
+                                <li><strong>Cash Flow and Revenue:</strong> Lenders need to see that your business generates sufficient and consistent revenue to comfortably cover the loan payments. They will analyze your bank statements, profit and loss statements, and other financial records to assess your cash flow. A healthy, predictable revenue stream is a very positive sign.</li>
+                                <li><strong>Time in Business:</strong> Most lenders prefer to see that a business has been operating for a certain period, often at least one to two years. An established operational history suggests stability and reduces the lender's risk.</li>
+                                <li><strong>Business Plan and Industry:</strong> A well-articulated business plan that outlines your strategy for growth and how you intend to use the funds is crucial. Lenders also consider the overall health and outlook of your industry.</li>
+                            </ul>
+                            <p>Because the lender is taking on more risk without the backstop of collateral, unsecured loans typically come with higher interest rates and shorter repayment terms than secured loans. However, the trade-off is significant: you get fast access to funding without encumbering your company's or your personal assets.</p>
+                            <h4>The Unsecured Advantage: A Founder's Story</h4>
+                            <blockquote>Take the case of "Pixel Perfect," a digital marketing agency founded by two partners, Alex and Ben. Their business was thriving, with a growing list of clients and a reputation for delivering outstanding results. Their primary assets were their employees' skills and their client relationships—nothing a traditional bank would accept as collateral. They received an opportunity to pitch their services to a major national brand, a contract that would triple their annual revenue. The problem? To service the contract, they needed to immediately hire five new staff members and invest in advanced analytics software, requiring $200,000 in upfront capital. A secured loan was out of the question. They turned to an unsecured business loan. Based on their strong revenue history (three years of consistent growth) and excellent credit, they were approved for a $250,000 unsecured loan within a week. They hired the new team, purchased the software, and won the contract. The higher interest rate was a calculated cost, easily absorbed by the massive increase in revenue from the new client. For Pixel Perfect, the unsecured loan wasn't just helpful; it was the only path forward. It allowed them to leverage their business's performance, not its physical assets, to seize a transformative opportunity.</blockquote>
+                            <h4>Who is the Ideal Candidate for an Unsecured Loan?</h4>
+                            <p>Unsecured loans are a versatile tool, but they are particularly well-suited for certain types of businesses:</p>
+                            <ul>
+                                <li><strong>Service-Based Businesses:</strong> Consultants, marketing agencies, law firms, and other professional services often have high revenue but few physical assets to pledge as collateral.</li>
+                                <li><strong>Tech Startups and Software Companies:</strong> These businesses invest in intellectual property and talent, not heavy machinery. Their value is in their code and their people, making unsecured financing a natural fit.</li>
+                                <li><strong>Retail and E-commerce Businesses:</strong> Companies that need to quickly purchase inventory to meet seasonal demand or launch a new product line can benefit from the speed and flexibility of unsecured loans.</li>
+                                <li><strong>Established Businesses Needing a Quick Capital Injection:</strong> Whether it's to cover a temporary cash flow gap, finance a large order, or jump on a sudden opportunity, the fast approval time of unsecured loans makes them ideal for time-sensitive needs.</li>
+                            </ul>
+                            <h4>The Bottom Line</h4>
+                            <p>Don't let a lack of traditional collateral stand between you and your business's potential. Unsecured business loans offer a vital pathway to capital for strong, healthy businesses that are poised for growth. They represent a modern approach to lending, one that values performance, potential, and profitability over physical possessions. If your business has a solid track record and a clear vision for the future, an unsecured loan could be the most powerful tool in your financial arsenal. At Chariot Lending, we connect businesses like yours with the funding partners who understand your value and are ready to invest in your success.</p>
+                        </div>
+                    </div>
+                    <!-- New Blog Post 4 - Added for loan use cases -->
+                    <div class="blog-post">
+                        <div class="blog-post-summary">
+                            <h3>Strategic Financing: Key Use Cases for Loans Between $10K-$400K</h3>
+                            <div class="blog-post-date">July 22, 2025</div>
+                            <p class="blog-post-excerpt">Loans in the $10,000 to $400,000 range offer businesses the perfect balance of substantial capital without overextending. Discover the most impactful ways to use this funding to accelerate growth, improve operations, and secure your company's future...</p>
+                            <span class="read-more">Read More</span>
+                        </div>
+                        <div class="blog-post-full-content">
+                            <p>In the world of business financing, loans between $10,000 and $400,000 occupy a sweet spot—large enough to make a meaningful impact on your operations, yet manageable enough to avoid over-leveraging. This range is ideal for businesses looking to scale, modernize, or navigate temporary challenges without taking on excessive debt. Whether you're a small business looking to expand or a mid-sized company seeking to optimize operations, understanding the strategic use cases for this funding range can help you make informed decisions that propel your business forward. Let's explore the most common and impactful ways businesses are using loans in this range to create lasting value.</p>
+                            <h4>1. Business Expansion and Growth Initiatives</h4>
+                            <p>One of the most powerful uses of mid-range business loans is to fund expansion efforts that directly increase revenue. Consider these specific applications:</p>
+                            <ul>
+                                <li><strong>Opening New Locations:</strong> A $150,000 loan could cover the build-out costs, initial inventory, and marketing for a second retail location or franchise unit. This is particularly effective for businesses with proven concepts that are ready to replicate their success in new markets.</li>
+                                <li><strong>Market Expansion:</strong> Funding can support the costs of entering new geographic markets, including localized marketing campaigns, distribution network setup, and hiring regional sales representatives. A $75,000 investment here could open up an entirely new customer base.</li>
+                                <li><strong>Product Line Expansion:</strong> Loans can finance the development and launch of complementary product lines. For example, a bakery might use $50,000 to develop a wholesale division or a tech company might invest $100,000 in developing a SaaS version of their existing product.</li>
+                            </ul>
+                            <blockquote>Case Study: "Urban Blooms," a successful florist with one storefront, secured a $250,000 loan to open two additional locations in high-traffic areas of their city. The loan covered build-out costs, initial inventory, and a six-month marketing campaign. Within 18 months, revenue had tripled, and the additional locations were generating enough profit to cover the loan payments with significant margin to spare.</blockquote>
+                            <h4>2. Equipment Purchases and Technology Upgrades</h4>
+                            <p>Modern, efficient equipment can dramatically improve productivity and quality while reducing operating costs. Loans in this range are perfect for:</p>
+                            <ul>
+                                <li><strong>Manufacturing Equipment:</strong> A $300,000 loan could purchase state-of-the-art CNC machines that double production capacity while improving precision and reducing waste.</li>
+                                <li><strong>Commercial Vehicles:</strong> $150,000 might buy two delivery trucks with advanced routing technology, enabling a logistics company to take on larger contracts.</li>
+                                <li><strong>Technology Infrastructure:</strong> A $75,000 investment could implement an enterprise-grade ERP system that integrates all business functions, providing real-time data for better decision-making.</li>
+                                <li><strong>Specialized Tools:</strong> From commercial kitchen equipment to medical devices, $50,000 can outfit a business with the tools needed to offer premium services.</li>
+                            </ul>
+                            <p>The key advantage here is that the equipment often serves as its own collateral, and the increased efficiency typically generates enough savings or additional revenue to justify the loan payments.</p>
+                            <h4>3. Working Capital and Cash Flow Management</h4>
+                            <p>Even profitable businesses can face cash flow challenges due to seasonality, rapid growth, or delayed receivables. Strategic uses include:</p>
+                            <ul>
+                                <li><strong>Bridging Seasonal Gaps:</strong> A $50,000 line of credit can help a landscaping company cover payroll during winter months when revenue dips.</li>
+                                <li><strong>Inventory Purchasing:</strong> $200,000 could allow a retailer to buy inventory in bulk at significant discounts, improving margins.</li>
+                                <li><strong>Taking Advantage of Early Payment Discounts:</strong> A $30,000 loan might let you pay suppliers early to capture 2% discounts, which adds up significantly over time.</li>
+                                <li><strong>Hiring Before Growth:</strong> $100,000 could fund the salaries of key hires needed to support an expected expansion, allowing you to staff up proactively rather than reactively.</li>
+                            </ul>
+                            <h4>4. Marketing and Customer Acquisition</h4>
+                            <p>Well-planned marketing investments can generate exponential returns. Consider these applications:</p>
+                            <ul>
+                                <li><strong>Digital Marketing Campaigns:</strong> A $50,000 investment in targeted Facebook, Google, and LinkedIn ads with professional creative and landing pages can dramatically increase lead flow.</li>
+                                <li><strong>Brand Development:</strong> $75,000 might fund a comprehensive rebranding including logo, website, and marketing materials to position your company as an industry leader.</li>
+                                <li><strong>Trade Shows and Events:</strong> $30,000 could cover booth space, travel, and promotional materials for key industry events where high-value customers congregate.</li>
+                                <li><strong>Customer Retention Programs:</strong> $25,000 might implement a CRM system and loyalty program that increases repeat business by 20-30%.</li>
+                            </ul>
+                            <blockquote>Case Study: A B2B software company used a $120,000 loan to fund an aggressive content marketing and SEO strategy. They hired two content creators and invested in high-quality backlinks. Within a year, organic traffic increased by 300%, and the resulting leads allowed them to triple their customer base without increasing their sales team.</blockquote>
+                            <h4>5. Debt Refinancing and Restructuring</h4>
+                            <p>Loans in this range can also be used strategically to improve your financial position:</p>
+                            <ul>
+                                <li><strong>Consolidating High-Interest Debt:</strong> Combining multiple high-rate credit cards or merchant cash advances into a single lower-interest loan can save thousands in interest payments.</li>
+                                <li><strong>Extending Payment Terms:</strong> Refinancing short-term debt with a longer-term loan can reduce monthly payments and improve cash flow.</li>
+                                <li><strong>Building Business Credit:</strong> Responsibly managing a mid-sized loan can establish creditworthiness, making future financing easier and less expensive to obtain.</li>
+                            </ul>
+                            <h4>Why You Should Consider a Loan</h4>
+                            <p>Many business owners hesitate to take on debt, but when used strategically, loans in this range can be transformative:</p>
+                            <ul>
+                                <li><strong>Accelerate Growth:</strong> Rather than waiting to save enough capital, financing lets you seize opportunities now when they're most valuable.</li>
+                                <li><strong>Maintain Ownership:</strong> Unlike equity financing, loans don't require giving up a portion of your business.</li>
+                                <li><strong>Tax Advantages:</strong> Interest payments are typically tax-deductible, reducing the effective cost of borrowing.</li>
+                                <li><strong>Build Credit History:</strong> Successful repayment establishes creditworthiness for future, potentially larger financing needs.</li>
+                                <li><strong>Flexible Use:</strong> Unlike some specialized financing, general business loans can be used for virtually any legitimate business purpose.</li>
+                            </ul>
+                            <p>The key is to match the loan amount and term to a specific, revenue-generating (or cost-saving) purpose with a clear ROI. At Chariot Lending, we specialize in helping businesses identify their optimal financing strategy and connect with lenders offering competitive terms. Whether you need $25,000 to launch a marketing campaign or $350,000 to expand your production facility, we can help you find the right solution to fuel your growth.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">© 2025 Chariot Lending. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="#" onclick="showPage(event, 'apply-now')">Apply Now</a>
+                    <a href="#" onclick="showPage(event, 'about-me')">About Me</a>
+                    <a href="#" onclick="showPage(event, 'blog')">Blog</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>Disclaimer: Chariot Lending is not a direct lender but connects borrowers with potential lending partners. Loan approval is not guaranteed and depends on the lender's assessment of your creditworthiness. Rates and terms vary by lender and your individual circumstances. Not all applicants will qualify for the maximum loan amount or most favorable terms.</p>
+                <p>This service is not available in all states, and the states serviced may change from time to time without notice. We do not endorse any particular lender or loan product. We do not charge you for our service.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-    function showPage(e, pageId) {
-        e.preventDefault();
-        document.querySelectorAll('.page').forEach(function(page) {
-            page.classList.remove('active');
+        // --- Page Navigation ---
+        function showPage(event, pageId) {
+            if(event) event.preventDefault();
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            const newPage = document.getElementById(pageId);
+            if (newPage) newPage.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        // --- Accordion Logic (for FAQs and Blog) ---
+        function setupAccordion(containerSelector, triggerSelector) {
+            const items = document.querySelectorAll(containerSelector);
+
+            items.forEach(item => {
+                const trigger = item.querySelector(triggerSelector);
+                trigger.addEventListener('click', () => {
+                    const content = trigger.nextElementSibling;
+                    const itemIsActive = item.classList.contains('active');
+
+                    // Close all other items
+                    items.forEach(i => {
+                        if (i !== item) {
+                            i.classList.remove('active');
+                            const otherContent = i.querySelector(triggerSelector).nextElementSibling;
+                            otherContent.style.maxHeight = null;
+                            if (otherContent.classList.contains('blog-post-full-content')) {
+                               otherContent.style.padding = '0 25px';
+                            }
+                        }
+                    });
+
+                    // Toggle the clicked item
+                    if (itemIsActive) {
+                        item.classList.remove('active');
+                        content.style.maxHeight = null;
+                    } else {
+                        item.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup for FAQs
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = item.classList.contains('active');
+                    
+                    faqItems.forEach(i => {
+                        if (i !== item) {
+                            i.classList.remove('active');
+                            i.querySelector('.faq-answer').style.maxHeight = null;
+                        }
+                    });
+
+                    if (isActive) {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = null;
+                    } else {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // Setup for Blog Posts
+            const blogPosts = document.querySelectorAll('.blog-post');
+            blogPosts.forEach(post => {
+                const summary = post.querySelector('.blog-post-summary');
+                summary.addEventListener('click', () => {
+                    const fullContent = post.querySelector('.blog-post-full-content');
+                    const isActive = post.classList.contains('active');
+
+                    if(isActive) {
+                        post.classList.remove('active');
+                        fullContent.style.maxHeight = null;
+                    } else {
+                        post.classList.add('active');
+                        fullContent.style.maxHeight = fullContent.scrollHeight + "px";
+                    }
+                });
+            });
+            
+            // --- Initial Page Load ---
+            showPage(null, 'apply-now');
+
+            // --- Form Submission with FormSubmit ---
+            const leadForm = document.getElementById('leadForm');
+            if (leadForm) {
+                leadForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const form = e.target;
+                    const messageDiv = document.getElementById('form-message');
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    
+                    // Store original button text
+                    const originalButtonText = submitButton.textContent;
+                    
+                    // Show loading state
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            messageDiv.textContent = 'Thank you for your submission! We will contact you shortly.';
+                            messageDiv.className = 'success';
+                            form.reset();
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    } catch (error) {
+                        messageDiv.textContent = 'There was a problem submitting your form. Please try again or contact us directly.';
+                        messageDiv.className = 'error';
+                        console.error('Form submission error:', error);
+                    } finally {
+                        // Reset button state
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
+                        
+                        // Scroll to message
+                        messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            messageDiv.textContent = '';
+                            messageDiv.className = '';
+                        }, 5000);
+                    }
+                });
+            }
         });
-        document.getElementById(pageId).classList.add('active');
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    }
     </script>
 </body>
 </html>
