@@ -165,6 +165,16 @@
         .chariot-highlights span[style] {
             font-weight: bold;
         }
+        .referral-note {
+            text-align: center;
+            font-size: 17px;
+            margin: 32px auto;
+            max-width: 700px;
+            background: #fffbe0;
+            border-radius: 10px;
+            padding: 16px 12px;
+            box-shadow: 0 2px 8px rgba(10,37,64,0.03);
+        }
         @media (max-width: 600px) {
             .chariot-highlights {
                 padding: 25px 8px;
@@ -306,9 +316,46 @@
                 </div>
             </section>
         </section>
-        <!-- About Me Page, Blog Page, and rest of your HTML unchanged... -->
-        <!-- ... -->
+        <!-- About Me Page -->
+        <section id="about-me" class="page">
+            <div class="container">
+                <h1>About Me</h1>
+                <p>Hi! I'm Paul Safranek. I specialize in helping individuals and businesses secure the funding they need through trusted lending partners.</p>
+                <h2>Contact Information</h2>
+                <ul>
+                    <li>Email: <a href="mailto:paul@chariotlending.com">paul@chariotlending.com</a></li>
+                    <li>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                </ul>
+                <h2>How I Can Help</h2>
+                <p>I work directly with lenders to negotiate the best rates and terms for you. Whether you need funding for real estate, business, or personal needs, I can guide you through every step of the process.</p>
+                <h2>Referral Instructions</h2>
+                <p>When speaking with my lending sources or filling out forms, please mention that you were referred by "Paul Safranek" for priority service.</p>
+            </div>
+        </section>
+        <!-- Blog Page -->
+        <section id="blog" class="page">
+            <div class="container">
+                <h1>Blog</h1>
+                <article>
+                    <h2>Business Funding Strategies in 2024</h2>
+                    <p>Discover modern approaches for securing business capital, including unsecured lending, working capital loans, and creative investment solutions.</p>
+                </article>
+                <article>
+                    <h2>Understanding Unsecured Lending</h2>
+                    <p>Learn about the benefits and risks of unsecured lending, and why it may be the right solution for you.</p>
+                </article>
+            </div>
+        </section>
     </main>
-    <!-- ...footer and scripts unchanged... -->
+    <script>
+    function showPage(e, pageId) {
+        e.preventDefault();
+        document.querySelectorAll('.page').forEach(function(page) {
+            page.classList.remove('active');
+        });
+        document.getElementById(pageId).classList.add('active');
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    </script>
 </body>
 </html>
